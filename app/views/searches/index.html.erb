@@ -1,0 +1,10 @@
+<div class="container">
+<h3><%= "Recent tweets for: #{@topic}"%></h3>
+  <% @tweets.each do |tweet|%>
+  <li>
+    <%= tweet.text %>
+    <%= tweet.created_at %>
+  <% end %>
+  </li>
+  <%= render "/layouts/homelink"%>
+</div>

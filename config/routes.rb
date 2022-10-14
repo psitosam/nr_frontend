@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 root 'welcome#index'
-get '/healthcare', to: 'healthcare#index'
-get '/opensource', to: 'opensource#index'
-get '/nasa', to: 'nasa#index'
+# get '/healthcare', to: 'searches#index'
+# get '/opensource', to: 'searches#index'
+# get '/nasa', to: 'searches#index'
+resources :searches, only: [:index]
 end

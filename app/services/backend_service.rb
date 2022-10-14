@@ -12,7 +12,7 @@ class BackendService
   end
 
   def self.get_tweets_by_topic(topic)
-    response = conn.get("/tweets/") do |f|
+    response = conn.get("/api/v1/tweets/") do |f|
       f.params[:query] = topic
     end
     JSON.parse(response.body, symbolize_names: true)

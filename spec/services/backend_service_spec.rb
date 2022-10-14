@@ -35,7 +35,7 @@ RSpec.describe BackendService do
 
   it '#get tweets by topic' do 
     response_body = File.read('spec/fixtures/nasa_query.json')
-    stub_request(:get, "https://hidden-woodland-25489.herokuapp.com/tweets/?query=healthcare").
+    stub_request(:get, "https://hidden-woodland-25489.herokuapp.com/tweets/?query=nasa").
     with(
       headers: {
     'Accept'=>'*/*',
@@ -44,7 +44,7 @@ RSpec.describe BackendService do
       }).
     to_return(status: 200, body: response_body, headers: {})
     
-    test = BackendService.get_tweets_by_topic("healthcare")
+    test = BackendService.get_tweets_by_topic("nasa")
     # Checking for shape of response and number of tweets in array:
     response_array = test[:data]
     expect(response_array).to be_a(Array)
