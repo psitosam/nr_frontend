@@ -32,4 +32,36 @@ RSpec.describe BackendService do
       expect(tweet[:attributes][:edit_history_tweet_ids]).to be_a(Array)
     end
   end 
+
+  it '#get tweets by topic' do 
+    response_body = File.read('spec/fixtures/nasa_query.json')
+    stub_request(:get, "https://hidden-woodland-25489.herokuapp.com/tweets/?query=healthcare").
+    with(
+      headers: {
+    'Accept'=>'*/*',
+    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+    'User-Agent'=>'Faraday v2.6.0'
+      }).
+    to_return(status: 200, body: response_body, headers: {})
+    
+    test = BackendService.get_tweets_by_topic("healthcare")
+    # Checking for shape of response and number of tweets in array:
+    response_array = test[:data]
+    expect(response_array).to be_a(Array)
+    expect(response_array.length).to eq(10)
+    response_array.each do |tweet|
+      expect(tweet).to have_key(:id)
+      expect(tweet[:id]).to be_a(String)
+      expect(tweet).to have_key(:attributes)
+      expect(tweet[:attributes]).to be_a(Hash)
+      expect(tweet[:attributes]).to have_key(:created_at)
+      expect(tweet[:attributes][:created_at]).to be_a(String)
+      expect(tweet[:attributes]).to have_key(:text)
+      expect(tweet[:attributes][:text]).to be_a(String)
+      # Check for accurate topics contained in tweet:
+      expect(tweet[:attributes][:text].downcase).to include("nasa").or include("space")
+      expect(tweet[:attributes]).to have_key(:edit_history_tweet_ids)
+      expect(tweet[:attributes][:edit_history_tweet_ids]).to be_a(Array)
+    end
+  end 
 end 
