@@ -50,3 +50,28 @@ because these were base requirements for deploying the application to production
 ## Features
 
 ### Navigation
+
+### Welcome Page
+<img width="1300" alt="home_page" src="https://user-images.githubusercontent.com/95240894/196000394-383897ff-91ac-4be2-a569-78f01751c2e0.png">
+
+The landing page presents the title of the app and asks the visitor what tweets they would like to view. Each topic has a link to a separate page that will render ten tweets arranged according to topic. Additionally, there is a Return Home link on each page to return to the Welcome page.
+
+### Healthcare Page
+<img width="1328" alt="healthcare_search" src="https://user-images.githubusercontent.com/95240894/196000435-f69a1670-4fe0-416d-9637-01355e5a0d7f.png">
+
+This page renders ten tweets that are the results of a query with "healthcare" params sent to the backend application, as well as the Return Home link.
+
+### NASA page
+<img width="1339" alt="nasa_search" src="https://user-images.githubusercontent.com/95240894/196000452-ab2e1f72-141e-417a-bc50-553ba1166c6f.png">
+
+Similar to the Healthcare page, but with "nasa" params.
+
+### Open Source page
+<img width="1337" alt="opensource_search" src="https://user-images.githubusercontent.com/95240894/196000474-a7205a28-e561-4c7b-80f1-1e471c9a31db.png">
+
+As above, with "opensource" params.
+
+## Contact
+### Contributors
+
+* Alex Psitos     | [Github](https://github.com/psitosam) | [LinkedIn](https://www.linkedin.com/in/alex-psitos-5429a1232/)
