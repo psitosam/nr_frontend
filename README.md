@@ -75,4 +75,4 @@ As above, with "opensource" params.
 ## Contact
 ### Contributors
 
-* Alex Psitos     | [Github](https://github.com/psitosam) | [LinkedIn](https://www.linkedin.com/in/alex-psitos-5429a1232/)
+* Alex Psitos     | [Github](https://github.com/psitosam) | [LinkedIn](https://www.linkedin.com/in/alex-psitos-5429a1232/) | [Portfolio](https://www.alexpsitos.dev)
