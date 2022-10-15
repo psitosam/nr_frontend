@@ -1,5 +1,5 @@
 # Show Me Tweets
-Welcome to Show Me Tweets! This is a front-end/UI portion of 2-part application deisigned with a separate *[API backend](https://github.com/B-gann21/dungeonball-be)*. This frontend application is responsible for retrieving tweet data from our backend application, and displaying those tweets to  visitors. Currently, the topics of tweets are limited to "healthcare", "nasa", and "opensource". The tweets retrieved are limited to those categorized as being in the English language. The backend application periodically (every 10 minutes) retrieves ten tweets for each category from the Twitter API and stores them in the database.
+Welcome to Show Me Tweets! This is a front-end/UI portion of 2-part application deisigned with a separate *[API backend](https://github.com/psitosam/nr_backend)*. This frontend application is responsible for retrieving tweet data from our backend application, and displaying those tweets to  visitors. Currently, the topics of tweets are limited to "healthcare", "nasa", and "opensource". The tweets retrieved are limited to those categorized as being in the English language. The backend application periodically (every 10 minutes) retrieves ten tweets for each category from the Twitter API and stores them in the database.
 
 ## Implementation
 
@@ -34,6 +34,7 @@ port        ENV.fetch("PORT") { 5000 }
 rails s
 ```
 on both the FE and BE applications to ensure both are running simultaneously.
+
 6. You're up and running! We recommend you run
 ```bash
 bundle exec rspec
