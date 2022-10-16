@@ -21,6 +21,10 @@ after bundling. This will generate an application.yml file at config/application
 BASE_URL: "https://hidden-woodland-25489.herokuapp.com"
 ```
 in order to hit the live application. However, if you wish to only deploy on your local servers, the repo is set up to do so!
+Instead of using the live URL listed above, simply add this snippet to your ```config/application.yml``` file:
+```ruby
+BASE_URL: "http://127.0.0.1"
+```
 Right now the frontend is set up to run on ```localhost:3000``` and the backend is set up to run on ```localhost:5000```.
 
 In order to make changes to this, please open ```config/puma.rb``` and change:
