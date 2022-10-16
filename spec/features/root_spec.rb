@@ -33,7 +33,7 @@ RSpec.describe 'the root page' do
     click_link("Healthcare")
     expect(current_path).to eq searches_path
     expect(page).to have_content("Recent tweets for: healthcare")
-    expect(page).to have_content("The most wild absurd thing about all this money is that Billions of dollars are sent to another country to pay for their healthcare (which they need). but essentially the US will give free healthcare to another nation but refuses to even talk about it here 🙂 https://t.co/jcu3QbO2sv")
+    expect(page).to have_content("RT @AmoneyResists: Herschel Walker: “Americans should get off of government healthcare and get on the healthcare that U.S. senators have.”…")
   end 
 
   it 'nasa link takes user to nasa tweets page' do
@@ -50,7 +50,7 @@ RSpec.describe 'the root page' do
     visit root_path
     click_link("Nasa")
     expect(current_path).to eq searches_path
-    expect(page).to have_content("RT @NASA: \"The last time I was home, I found a little note that I had written when I was a 13-year-old kid. It said, 'My dream job in the f…")
+    expect(page).to have_content("RT @Fact: NASA once banned beans because astronaut farts could cause sudden fires on a spacecraft.")
   end
 
   it 'opensource link takes user to opensource tweets page' do
@@ -67,6 +67,6 @@ RSpec.describe 'the root page' do
     visit root_path
     click_link("Open Source")
     expect(current_path).to eq searches_path
-    expect(page).to have_content("RT @FuturegrooveNET: Interested in a #music #audio #production #workstation? Download AV Linux MX Edition here, today Oct 15, 2022: https:/…")
+    expect(page).to have_content("RT @ManavGambhir11: An amazing session to attend.Learnt about whatnot, from opensource to web3, I got to know about all. An amazing opportu…")
   end
 end 
