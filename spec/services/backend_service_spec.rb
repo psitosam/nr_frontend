@@ -49,19 +49,22 @@ RSpec.describe BackendService do
     response_array = test[:data]
     expect(response_array).to be_a(Array)
     expect(response_array.length).to eq(10)
+
+    # Checking for correct shape and attributes of each tweet:
     response_array.each do |tweet|
       expect(tweet).to have_key(:id)
-      expect(tweet[:id]).to be_a(String)
+      expect(tweet[:id]).to be_a(Integer)
       expect(tweet).to have_key(:attributes)
       expect(tweet[:attributes]).to be_a(Hash)
       expect(tweet[:attributes]).to have_key(:created_at)
       expect(tweet[:attributes][:created_at]).to be_a(String)
       expect(tweet[:attributes]).to have_key(:text)
       expect(tweet[:attributes][:text]).to be_a(String)
-      # Check for accurate topics contained in tweet:
-      expect(tweet[:attributes][:text].downcase).to include("nasa").or include("mars").or include("gamma ray burst")
       expect(tweet[:attributes]).to have_key(:edit_history_tweet_ids)
       expect(tweet[:attributes][:edit_history_tweet_ids]).to be_a(Array)
+      # Check for accurate topics contained in tweet:
+      expect(tweet[:attributes]).to have_key(:subject)
+      expect(tweet[:attributes][:subject]).to eq("nasa")
     end
   end 
 end 
