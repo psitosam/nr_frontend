@@ -20,14 +20,17 @@ after bundling. This will generate an application.yml file at config/application
 ```ruby
 BASE_URL: "https://hidden-woodland-25489.herokuapp.com"
 ```
-In the future, additional functionality may be built out to configure a level of authorization between the FE and BE to ensure that only authorized users can make requests, but for the purposes of this code challenge I have left it open.
-In order to run both applications simultaneously, open config/puma.rb and change line 12 from:
+in order to hit the live application. However, if you wish to only deploy on your local servers, the repo is set up to do so!
+Right now the frontend is set up to run on ```localhost:3000``` and the backend is set up to run on ```localhost:5000```.
+
+In order to make changes to this, please open ```config/puma.rb``` and change:
+
 ```ruby
 port        ENV.fetch("PORT") { 3000 }
 ```
 to:
 ```ruby
-port        ENV.fetch("PORT") { 5000 }
+port        ENV.fetch("PORT") { your_port_goes_here }
 ```
 5. Run:
 ```bash
